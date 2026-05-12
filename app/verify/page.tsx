@@ -190,9 +190,15 @@ function EnterCodeContent() {
             <Button
               className="bg-[#254650] text-white hover:bg-[#1e383f] rounded-md disabled:opacity-70 disabled:pointer-events-none h-8 px-5 text-sm font-medium"
               onClick={handleVerify}
-              disabled={code.replace(/\D/g, "").length !== 6 || isLoading || isCooldown}
+              disabled={
+                code.replace(/\D/g, "").length !== 6 || isLoading || isCooldown
+              }
             >
-              {isLoading ? "Loading..." : isCooldown ? `Wait ${cooldownSeconds}s` : "Continue"}
+              {isLoading
+                ? "Loading..."
+                : isCooldown
+                  ? `Wait ${cooldownSeconds}s`
+                  : "Continue"}
             </Button>
             <Button
               variant="ghost"
